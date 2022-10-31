@@ -1,0 +1,663 @@
+/* ================================================================= */
+/*
+1. Common
+2. Home
+3. Pomodoro & Long & Hour & Personal
+4. Options
+5. Music
+6. Footer
+7. Loading
+8. Adaptive
+*/
+/* =================================================================
+1. Common
+================================================================= */
+body {
+    height: 100%;
+    background:
+            radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+            radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+    background-color: slategray;
+    background-size:75px 100px;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+.app-container {
+    text-align: center;
+    padding: 30px 80px 20px;
+}
+
+nav {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background: rgb(174, 181, 199);
+    border-radius: 10px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+nav a.router-link-exact-active {
+    color: #1b4ccb;
+    text-decoration: underline;
+}
+
+.app {
+    display: flex;
+    margin-top: 30px;
+}
+
+/* =================================================================
+2. Home
+================================================================= */
+
+.home {
+    color: #2c3e50;
+    background: rgb(174, 181, 199);
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 800px;
+    margin-right: 50px;
+    min-height: 610px;
+}
+
+.home-header {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.home-text {
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.home-nav {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.home-ask {
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.home-nav a:-webkit-any-link{
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.home-nav a:-webkit-any-link:hover{
+    color: white;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+/* =================================================================
+3. Pomodoro & Long & Hour & Personal
+================================================================= */
+
+.pomodoro-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #32303e;
+    border-radius: 10px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.pomodoro-work-active {
+    background-color: rgba(177, 175, 175, 0.4) !important;
+    margin-right: 5px;
+}
+
+.pomodoro-break-active {
+    background-color: rgba(177, 175, 175, 0.4) !important;
+    margin-left: 5px;
+}
+
+.pomodoro-buttons button {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    position: relative;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+}
+
+.pomodoro-work {
+    margin-right: 5px;
+}
+
+
+.pomodoro-break {
+    margin-left: 5px;
+}
+
+.pomodoro-buttons button:hover {
+    color: #2c3e50;
+    background-color: white;
+}
+
+.pomodoro-stop {
+    margin-right: 5px;
+    background-color: white !important;
+    color: #2c3e50 !important;
+}
+
+.pomodoro-start {
+    margin-right: 5px;
+}
+
+.pomodoro-long {
+    margin-left: 5px;
+}
+
+.pomodoro-bar {
+    margin: 20px auto;
+}
+
+.pomodoro-colon {
+    margin-right: 2px;
+    margin-left: 2px;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.pomodoro-container span {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.radial-progress-inner {
+    flex-direction: row !important;
+}
+
+.button-active {
+    color: #2c3e50 !important;
+    background-color: white !important;
+}
+
+.pomodoro-session {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* =================================================================
+4. Options
+================================================================= */
+.timer-options {
+    margin-left: 5px;
+}
+
+.options-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.39);
+}
+
+.options {
+    background: rgb(174, 181, 199);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 40px;
+    min-width: 320px;
+    max-width: 480px;
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.options-header {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.options-params {
+    margin-bottom: 30px;
+}
+
+.options-params li {
+    margin-bottom: 15px;
+}
+
+.options-params input {
+    margin-top: 7px;
+    font-size: 16px;
+    width: 40px;
+    color: #2c3e50;
+}
+
+.options-btn {
+    color: #32303e !important;
+    width: 140px !important;
+}
+
+.options-btn:hover {
+    background-color: white !important;
+    color: #2c3e50;
+}
+
+.options-btn-close {
+    border: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 10px;
+    width: 40px !important;
+
+}
+.options-btn-close:hover g {
+    fill: white !important;
+    background-color: transparent !important;
+}
+
+.personal-options {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.personal-options li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.personal-options p {
+    padding-bottom: 7px;
+}
+
+.options-error {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 5px
+}
+
+.options-error li {
+    padding: 3px;
+    font-weight: normal;
+}
+
+.options-error li:first-child {
+    margin-top: 10px;
+}
+
+/* =================================================================
+5. Music
+================================================================= */
+.music {
+    color: #2c3e50;
+    background: rgb(174, 181, 199);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    width: 450px;
+    height: 400px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.music-header {
+    padding-top: 50px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.music-text {
+    padding-top: 20px;
+}
+
+.music-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #32303e;
+    border-radius: 10px;
+    overflow-wrap: normal;
+    overflow-y: auto;
+    height: 230px;
+}
+
+.music-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.musicItem-container {
+    background-color: rgba(255, 255, 255, 0.62);
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.musicItemInfo {
+    text-align: left;
+}
+
+.musicItem-title {
+    font-weight: bold;
+    color: #1b4ccb;
+    margin-bottom: 5px;
+}
+
+.musicItem-text {
+    font-size: 12px;
+    color: black;
+}
+
+.musicItem-btn {
+    background: transparent;
+    border: none;
+    width: 50px;
+}
+
+.musicItem-btn svg {
+    fill: #1b4ccb;
+}
+
+.musicItem-btn:hover svg {
+    fill: rgba(10, 5, 5, 0.69);
+}
+
+.musicItem-active {
+    background: rgba(255, 255, 255, 0.83);
+}
+/* =================================================================
+6. Footer
+================================================================= */
+
+.footer {
+    margin-top: 40px;
+    color: #2c3e50;
+    background: rgb(174, 181, 199);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    width: 450px;
+    height: 200px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.footer-header {
+    padding-top: 40px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-contacts  {;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.footer-mail, .footer-site {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.footer-mail:hover svg, .footer-site:hover svg{
+  fill: white;
+  transition: all 0.4s ease;
+}
+
+/* =================================================================
+7. Loading
+================================================================= */
+
+.preloader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #32303e;
+    z-index: 9999;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.preloader  p {
+    font-size: 30px;
+    color: white;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.looping-rhombuses-spinner, .looping-rhombuses-spinner * {
+    box-sizing: border-box;
+}
+
+.looping-rhombuses-spinner {
+    width: calc(15px * 4);
+    height: 15px;
+    position: relative;
+}
+
+.looping-rhombuses-spinner .rhombus {
+    height: 15px;
+    width: 15px;
+    background-color: #1b4ccb;
+    left: calc(15px * 4);
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 2px;
+    transform: translateY(0) rotate(45deg) scale(0);
+    animation: looping-rhombuses-spinner-animation 2500ms linear infinite;
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(1) {
+    animation-delay: calc(2500ms * 1 / -1.5);
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(2) {
+    animation-delay: calc(2500ms * 2 / -1.5);
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(3) {
+    animation-delay: calc(2500ms * 3 / -1.5);
+}
+
+@keyframes looping-rhombuses-spinner-animation {
+    0% {
+        transform: translateX(0) rotate(45deg) scale(0);
+    }
+    50% {
+        transform: translateX(-233%) rotate(45deg) scale(1);
+    }
+    100% {
+        transform: translateX(-466%) rotate(45deg) scale(0);
+    }
+}
+
+/* =================================================================
+8. Adaptive
+================================================================= *
+ */
+@media (max-width:1000px) {
+    #app {
+        overflow-x: hidden;
+    }
+
+   .app {
+       flex-direction: column;
+       align-items: center;
+       padding-bottom: 20px;
+   }
+
+   .home {
+       width: auto;
+       margin: 0;
+       padding-top: 40px;
+   }
+
+   .pomodoro-container {
+       margin-left: 60px;
+       margin-right: 60px;
+   }
+
+   .music {
+       padding-left: 95px;
+       padding-right: 95px;
+       margin: 0 auto;
+       width: auto;
+   }
+
+   .music-header {
+       margin-top: 15px;
+       padding-top: 40px;
+   }
+
+   .mu-fo {
+       width: 660px;
+   }
+
+   .footer {
+       margin-top: 15px;
+       width: auto;
+       padding-right: 30px;
+       padding-left: 30px;
+   }
+}
+
+@media (max-width:800px) {
+
+    .music {
+        margin: 0 auto;
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mu-fo {
+        width: auto;
+    }
+}
+
+@media (max-width:650px) {
+
+    .app-container {
+        padding: 20px;
+    }
+
+    .home {
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    .clock-container {
+        display: none
+    }
+
+    .pomodoro-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width:500px)  {
+    nav {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    nav a {
+        font-size: 15px;
+    }
+
+    .home {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .home-header {
+        font-size: 20px;
+    }
+
+    .home-text {
+        font-size: 15px;
+    }
+
+    .home-nav{
+        font-size: 15px;
+    }
+
+    .personal-options  {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .personal-options li {
+        align-items: center;
+    }
+
+    .music {
+        padding-bottom: 10px;
+    }
+
+    .music-header {
+        font-size: 20px;
+        padding-top: 30px;
+    }
+
+    .music-text {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+
+    .footer {
+        height: auto;
+    }
+
+    .footer-header {
+        font-size: 20px;
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+}
